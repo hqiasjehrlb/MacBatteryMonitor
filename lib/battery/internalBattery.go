@@ -1,40 +1,20 @@
 package battery
 
-import (
-	"os/exec"
-	"regexp"
-	"strconv"
-	"strings"
-)
-
 // InternalBatteryInfo - internal battery info object
 type InternalBatteryInfo struct {
-	Power      string
+	Power      string // AC or DC
 	Percentage int
 }
 
-// GetInternalBatteryInfo - return the MacBood internal battery info
+// GetInternalBatteryInfo - return the MacBook internal battery info
 func GetInternalBatteryInfo() InternalBatteryInfo {
-	var info InternalBatteryInfo
-	info.Percentage = -1
-	out, _ := exec.Command("pmset", "-g", "batt").Output()
-	lines := strings.Split(string(out), "\n")
-	for idx, line := range lines {
+	info := InternalBatteryInfo{"", -1}
+	for idx, line := range getLines(getStdout("pmset", "-g", "batt")) {
 		if idx == 0 {
-			match := regexp.MustCompile("'(.*) Power'").FindStringSubmatch(line)
-			if len(match) > 1 {
-				info.Power = match[1]
-			}
+			info.Power = matchName("'(.*) Power'", line)
 		} else if idx == 1 {
-			match := regexp.MustCompile("([0-9]+)%").FindStringSubmatch(line)
-			if len(match) > 1 {
-				p, err := strconv.Atoi(match[1])
-				if err == nil {
-					info.Percentage = p
-				}
-			}
+			info.Percentage = matchPercent("([0-9]+)%", line)
 		}
 	}
-
 	return info
 }
