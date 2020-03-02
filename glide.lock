@@ -1,0 +1,27 @@
+hash: 7543e3f4a4279ec33f108963f6ef3b1087c32a06add3b5ecd26943f6cc29bb33
+updated: 2020-02-25T16:10:37.007029+08:00
+imports:
+- name: github.com/gen2brain/beeep
+  version: 1f001e98c9e193f0cbd7e4020fe0bb094ebccc67
+- name: github.com/godbus/dbus
+  version: 06fc4b473149e499166adbb9e31c7365a8ea146f
+- name: github.com/gopherjs/gopherjs
+  version: fce0ec30dd00773d3fa974351d04ce2737b5c4d9
+  subpackages:
+  - js
+- name: github.com/gopherjs/gopherwasm
+  version: dfbc1e962ca966e73c3c9b9a2f7a23afc0408abd
+  subpackages:
+  - js
+- name: github.com/nu7hatch/gouuid
+  version: 179d4d0c4d8d407a32af483c2354df1d2c91e6c3
+- name: github.com/tadvi/systray
+  version: 11a2b8fa57afff744b2e66a9b05f173c78f20dc6
+- name: golang.org/x/sys
+  version: d5e6a3e2c0ae16fc7480523ebcb7fd4dd3215489
+  subpackages:
+  - windows
+  - windows/registry
+- name: gopkg.in/toast.v1
+  version: 0a84660828b24d25b35525c9a1f1f51267f8da91
+testImports: []
