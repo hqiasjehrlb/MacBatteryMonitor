@@ -47,10 +47,10 @@ func checkDevicesBattery() {
 	for _, info := range infos {
 		fmt.Println(dateStr(), "CheckDeviceBattery:", info.Device, "-", info.Percentage)
 		if info.Percentage >= 0 {
-			if info.Percentage < 40 {
+			if info.Percentage < 40 && !info.Charing {
 				notify(info.Device + " - " + strconv.Itoa(info.Percentage) + "% battery low")
 			}
-			if info.Percentage > 80 {
+			if info.Percentage > 80 && info.Charing {
 				notify(info.Device + " - " + strconv.Itoa(info.Percentage) + "%")
 			}
 		}
