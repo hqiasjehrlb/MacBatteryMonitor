@@ -11,4 +11,4 @@ $go build ## build run file
 ```
 
 ## OS
-* macOS Catalina 10.15.3
+* macOS Catalina ^10.15.3
