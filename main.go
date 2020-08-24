@@ -1,10 +1,11 @@
 package main
 
 import (
-	"MacBatteryMonitor/lib/battery"
 	"fmt"
 	"strconv"
 	"time"
+
+	"github.com/hqiasjehrlb/MacBatteryMonitor/lib/battery"
 
 	"github.com/gen2brain/beeep"
 )

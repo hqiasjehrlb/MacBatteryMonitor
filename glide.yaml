@@ -1,3 +1,0 @@
-package: MacBatteryMonitor
-import:
-- package: github.com/gen2brain/beeep

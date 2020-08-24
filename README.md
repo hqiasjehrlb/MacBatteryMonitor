@@ -1,13 +1,14 @@
 # MacBatteryMonitor
 MacBook、藍芽裝置電量提醒，當電量<40%跳通知
 
-## Package management
-* glide
-
-## Build
+## Install
+```bash
+$ go get github.com/hqiasjehrlb/MacBattertyMonitor
 ```
-$glide install ## to install dependency packages
-$go build ## build run file
+
+## Run
+```bash
+$ $GOPATH/bin/MacBatteryMonitor
 ```
 
 ## OS
