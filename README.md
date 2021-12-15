@@ -12,4 +12,4 @@ $ $GOPATH/bin/MacBatteryMonitor
 ```
 
 ## OS
-* macOS Catalina ^10.15.3
+* macOS Catalina ^12.0.1
