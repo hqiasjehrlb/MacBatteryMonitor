@@ -20,10 +20,12 @@ func main() {
 
 func setInterval(callback func(), interval int) {
 	ticker := time.NewTicker(time.Duration(interval) * time.Millisecond)
-	for {
+	v := 0
+	for v == 0 {
 		select {
 		case <-ticker.C:
 			callback()
+		default:
 		}
 	}
 }
